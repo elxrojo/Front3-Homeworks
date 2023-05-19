@@ -1,0 +1,6 @@
+/* ----- Haz que el item tenga borde, border-radius y un padding de 16px ---- */
+.li{
+    border: 1px red solid;
+    border-radius: 1rem;
+    padding: 1rem;
+}
