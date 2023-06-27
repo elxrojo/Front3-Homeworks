@@ -1,8 +1,3 @@
-import { useState } from 'react'
-import './App.css'
-import { Disponibles } from './Components/Disponibles'
-import { Seguidos } from './Components/seguidos'
-
 const usuarios = [
   { id: "1", nombre: "john", edad: 25, email: "john@egbert.com"},
   { id: "2", nombre: "rose", edad: 27, email: "rose@lalonde.com"},
@@ -22,34 +17,4 @@ const usuarios = [
   { id: "16", nombre: "aradia", edad: 33, email: "aradia@medigo.com"},
 ]
 
-function App() {
-
-const [seguidos, setSeguidos] = useState([])
-const [sugeridos, setSugeridos] = useState(usuarios)
-
-function handleFollow(id){
-
-  if(!seguidos.includes(seguidos.id)){
-    setSeguidos([...seguidos,...sugeridos.filter(s => s.id === id)])
-    setSugeridos(sugeridos.filter(sugerido => sugerido.id !== id))
-  }
-
-}
-
-function handleUnfollow(id){
-  if(!sugeridos.includes(sugeridos.id)){
-    setSugeridos([...sugeridos, ...seguidos.filter(s => s.id === id)])
-    setSeguidos(seguidos.filter(seguido => seguido.id !== id))
-  }
-}
-
-  return (
-    <>
-
-    <Disponibles usuarios={sugeridos} functionFollow={handleFollow}/>
-    <Seguidos seguidos ={seguidos} functionUnfollow={handleUnfollow}/>
-    </>
-  )
-}
-
-export default App
+export usuarios
